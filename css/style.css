@@ -89,7 +89,7 @@ p:not(.hero__title, .jumbotron__title, .team__member-title, .team__member-info, 
   width: 100%;
   padding-top: 160px;
   padding-bottom: 160px;
-  background-image: url('/img/Jumbotron.png');
+  background-image: url(/img/Jumbotron.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -133,7 +133,7 @@ p:not(.hero__title, .jumbotron__title, .team__member-title, .team__member-info, 
 .hero {
   padding-top: 128px;
   padding-bottom: 128px;
-  background-image: url('/img/hero.png');
+  background-image: url(/img/hero.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
