@@ -1,15 +1,3 @@
-/* Некоторые требования и подсказки по макету:
-
-Шапка остаётся вверху экрана при прокручивании страницы.
-Контент вложен в блок, ширина которого жёстко задана и равна 1219px, боковые padding'и - по 55px.
-Клик по ссылкам в шапке должен переносить на соответствующие разделы страницы.
-При клике на лого должен происходить переход в самый верх страницы.
-Контент внутри секций должен быть выровнен по центру (используй margin auto), чтобы на больших экранах он не прилипал к правому краю. Попробуй понажимать Ctrl и  -, чтобы уменьшить масштаб в браузере. Макет, который справа - то, как страница должна отображаться на широком экране.
-Чтобы расположить блоки в ряд, можно использовать display: inline-block.
-
-Старайся избегать установки width и height вручную. Большинство размеров можно выразить через margin и padding. Исключение - картинки и фиксированный контейнер страницы.
-Свойство position можно задать только для шапки.
-Подключи к своей странице normalize.css, чтобы сделать изначальные стили одинаковыми во всех браузерах (актуальная ссылка тут). */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
 
 * {
@@ -45,14 +33,6 @@ section {
   top: -100px;
 }
 
-p:not(.hero__title, .jumbotron__title, .team__member-title, .team__member-info, .copyright) {
-  margin-bottom: 40px;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 38px;
-  color: #000000;
-}
-
 .header {
   background-color: #007765;
   position: fixed;
@@ -73,16 +53,6 @@ p:not(.hero__title, .jumbotron__title, .team__member-title, .team__member-info, 
   padding: 28px 0;
 }
 
-.problem-link,
-.ppc-link,
-.team-link {
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 24px;
-  font-weight: 500;
-  font-style: normal;
-}
-
 .header__menu:after {
   clear: both;
   display: block;
@@ -93,15 +63,33 @@ p:not(.hero__title, .jumbotron__title, .team__member-title, .team__member-info, 
   position: static;
 }
 
+.problem-link,
+.ppc-link,
+.team-link {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 500;
+  font-style: normal;
+}
+
 main {
   padding-top: 84px;
+}
+
+p:not(.hero__title, .jumbotron__title, .team__member-title, .team__member-info, .copyright) {
+  margin-bottom: 40px;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38px;
+  color: #000000;
 }
 
 .jumbotron {
   width: 100%;
   padding-top: 160px;
   padding-bottom: 160px;
-  background-image: url(../img/Jumbotron.png);
+  background-image: url('img/Jumbotron.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -123,7 +111,6 @@ main {
   font-weight: 500;
   font-size: 64px;
   line-height: 75px;
-  /* identical to box height */
   text-align: center;
   color: #007765;
 }
@@ -136,7 +123,6 @@ main {
   font-weight: 400;
   font-size: 32px;
   line-height: 38px;
-  /* padding: 16px 0 92px; */
 }
 
 .problem_text:last-child,
