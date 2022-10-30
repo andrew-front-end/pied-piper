@@ -1,0 +1,260 @@
+/* Некоторые требования и подсказки по макету:
+
+Шапка остаётся вверху экрана при прокручивании страницы.
+Контент вложен в блок, ширина которого жёстко задана и равна 1219px, боковые padding'и - по 55px.
+Клик по ссылкам в шапке должен переносить на соответствующие разделы страницы.
+При клике на лого должен происходить переход в самый верх страницы.
+Контент внутри секций должен быть выровнен по центру (используй margin auto), чтобы на больших экранах он не прилипал к правому краю. Попробуй понажимать Ctrl и  -, чтобы уменьшить масштаб в браузере. Макет, который справа - то, как страница должна отображаться на широком экране.
+Чтобы расположить блоки в ряд, можно использовать display: inline-block.
+
+Старайся избегать установки width и height вручную. Большинство размеров можно выразить через margin и padding. Исключение - картинки и фиксированный контейнер страницы.
+Свойство position можно задать только для шапки.
+Подключи к своей странице normalize.css, чтобы сделать изначальные стили одинаковыми во всех браузерах (актуальная ссылка тут). */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+p,
+.section-title {
+  font-family: 'Roboto', sans-serif;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+.container {
+  max-width: 1219px;
+  margin: 0 auto;
+  padding: 0 55px;
+}
+
+section {
+  padding: 50px 0 90px;
+}
+
+.anchor {
+  position: relative;
+}
+
+#problem,
+#ppc,
+#team {
+  position: absolute;
+  top: -100px;
+}
+
+p:not(.hero__title, .jumbotron__title, .team__member-title, .team__member-info, .copyright) {
+  margin-bottom: 40px;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38px;
+  color: #000000;
+}
+
+.header {
+  background-color: #007765;
+  position: fixed;
+  height: 84px;
+  width: 100%;
+}
+
+.header__menu {
+  position: static;
+  float: right;
+  display: block;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 28px;
+  background-color: #007765;
+  padding: 28px 0;
+}
+
+.problem-link,
+.ppc-link,
+.team-link {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.header__menu:after {
+  clear: both;
+  display: block;
+}
+
+.header__logo {
+  padding: 20px 50px 0;
+  position: static;
+}
+
+main {
+  padding-top: 84px;
+}
+
+.jumbotron {
+  width: 100%;
+  padding-top: 160px;
+  padding-bottom: 160px;
+  background-image: url(../img/Jumbotron.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.jumbotron__title {
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 72px;
+  line-height: 84px;
+  justify-content: center;
+  text-align: center;
+}
+
+.section-title {
+  padding-bottom: 16px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 75px;
+  /* identical to box height */
+  text-align: center;
+  color: #007765;
+}
+
+.problem_text,
+.ppc__logo_text,
+.ppc__text {
+  color: #000000;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38px;
+  /* padding: 16px 0 92px; */
+}
+
+.problem_text:last-child,
+.ppc__text:last-child {
+  margin-bottom: 0;
+}
+
+.hero {
+  padding-top: 128px;
+  padding-bottom: 128px;
+  background-image: url('/img/hero.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 403px;
+}
+
+.hero__title {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 56px;
+  text-align: center;
+  color: #fff;
+}
+
+.problem,
+.team {
+  background-color: #eeeeee;
+}
+
+.ppc__logo-wrap {
+  display: flex;
+}
+
+.ppc__logo {
+  width: 115px;
+  height: 115px;
+}
+
+.ppc__logo_text {
+  float: right;
+  padding-left: 48px;
+  vertical-align: auto;
+  justify-content: center;
+}
+
+.team {
+  width: 100%;
+  height: 845px;
+}
+
+.team-container {
+  padding-right: 54px;
+}
+
+.team__list {
+  font-size: 0;
+  padding: 32px 0 94px;
+  list-style: none;
+}
+
+.team__member {
+  display: inline-block;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  vertical-align: top;
+  width: 350px;
+  min-height: 283px;
+}
+
+.team__member:nth-child(3n) {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+.team__member-img {
+  margin: 0 auto;
+  width: 168px;
+  height: 168px;
+  background-size: cover;
+}
+
+.team__member-wrap {
+  padding: 24px 0 28px;
+}
+
+.team__member-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  color: #007765;
+}
+
+.team__member-info {
+  font-style: italic;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #000000;
+}
+
+.footer {
+  margin: 0 auto;
+  height: 176px;
+  background-color: #333333;
+}
+
+.copyright-wrap {
+  padding: 48px 340px 64px;
+}
+
+.copyright {
+  width: 540px;
+  height: 64px;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #ffffff;
+}
